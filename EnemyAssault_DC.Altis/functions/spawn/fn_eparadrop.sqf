@@ -52,7 +52,6 @@ _egrp = createGroup _ghst_side;
 
 _air1_array = [_spawnpos, _dir, _air_type, _egrp] call BIS_fnc_spawnVehicle;
 _air1 = _air1_array select 0;
-EA_spawned_things pushBack _air1;
 //_air1 = createVehicle [_air_type,_spawnpos, [], 0, "FLY"];
 //_air1 setdir _dir;
 _air1 setpos [(getpos _air1 select 0), (getpos _air1 select 1), _flyheight];

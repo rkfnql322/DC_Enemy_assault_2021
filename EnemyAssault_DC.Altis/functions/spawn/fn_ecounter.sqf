@@ -60,7 +60,6 @@ for "_e" from 0 to (_enum)-1 do {
 
 	_veh = selectRandom _vehlist;
 	_car1 = createVehicle [_veh,_wpstart, [], 0, "NONE"];
-	EA_spawned_things pushBack _car1;
 	_car1 setdir _dir;
 	//sleep 0.2;
 	//_eGrp = createGroup _ghst_side;

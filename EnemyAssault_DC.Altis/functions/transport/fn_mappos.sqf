@@ -25,6 +25,9 @@ waituntil {mapclick or !(visiblemap)};
 	};
 	
 _pos = [clickpos select 0, clickpos select 1, (getposatl player) select 2];
+if (surfaceiswater clickpos) then {
+_pos = [clickpos select 0, clickpos select 1, (getposasl player) select 2];
+};	
 
 sleep 1;
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="CH View Distance">
-
 	<Package name="Main">
 		<Key ID="STR_chvd_title">
 			<Original>View Distance Settings</Original>
@@ -57,259 +56,518 @@
 	</package>
 </Project>
 
-<Project name="Vehicle Appearance Manager">
-	<Package name="Vehicle Appearance Manager">
-<!-- VAM LINE START -->
-<!-- Function/기능부 -->
-			<Key ID="STR_VAM_INITIALIZED">
-				<Original>Vehicle Appearance Manager initialized</Original>
-				<Korean>차량 형상 관리자 불러오기 및 초기화 완료</Korean>
-			</Key>
-			<Key ID="STR_VAM_MAIN_MENU_NAME">
-				<Original>Vehicle Appearance Manager</Original>
-				<Korean>차량 형상 관리자</Korean>
-			</Key>
-			<Key ID="STR_VAM_RESET_VEHICLE">
-				<Original>Reset</Original>
-				<Korean>초기화</Korean>
-			</Key>
-			<Key ID="STR_VAM_CONFIRM_MENU">
-				<Original>Confirm</Original>
-				<Korean>확인</Korean>
-			</Key>
-			<Key ID="STR_VAM_CURRENT_VEHICLE">
-				<Original>Current Vehicle :</Original>
-				<Korean>현  재    차  량 :</Korean>
-			</Key>
-			<Key ID="STR_VAM_FOB_CONDITION_CHECK_FAILED">
-				<Original>You should be in %1m from FOB.)</Original>
-				<Korean>FOB에서 %1m 안에 있어야 합니다.</Korean>
-			</Key>
-			<Key ID="STR_VAM_COMPLETE_RESET">
-				<Original>Reset complete</Original>
-				<Korean>초기화 완료</Korean>
-			</Key>
-			<Key ID="STR_VAM_CAMOUFLAGE">
-				<Original>Camoufluge</Original>
-				<Korean>위장</Korean>
-			</Key>
-			<Key ID="STR_VAM_COMPONENT">
-				<Original>Component</Original>
-				<Korean>구성품</Korean>
-			</Key>
-			<Key ID="STR_VAM_NO_CAMOUFLAGE">
-				<Original>There is no camouflage.</Original>
-				<Korean>위장이 없습니다.</Korean>
-			</Key>
-			<Key ID="STR_VAM_NO_COMPONENT">
-				<Original>There is no component.</Original>
-				<Korean>구성품이 없습니다.</Korean>
-			</Key>
-			<Key ID="STR_VAM_MARID_V1_NOTICE">
-				<Original>Your Marid is outdated one.\nVehicle component setup may not be loaded next time.\nPlease contact with your server admin.</Original>
-				<Korean>당신의 마리드는 오래된 것입니다.\n다음 번에 차량 구성품 설정을 불러올 수 없을 것입니다.\n해당 서버 관리자와 연락을 취해보십시오.</Korean>
-			</Key>
-<!-- Camouflage/위장 -->
-			<Key ID="STR_VAM_BLUFOR_CAMO">
-				<Original>BLUFOR</Original>
-				<Korean>청군</Korean>
-			</Key>
-			<Key ID="STR_VAM_GREEN_CAMO">
-				<Original>Green</Original>
-				<Korean>녹색</Korean>
-			</Key>
-			<Key ID="STR_VAM_BLACK_CAMO">
-				<Original>Black</Original>
-				<Korean>검정색</Korean>
-			</Key>
-			<Key ID="STR_VAM_AAF_CAMO">
-				<Original>AAF</Original>
-				<Korean>AAF</Korean>
-			</Key>
-			<Key ID="STR_VAM_DARK_GREEN_CAMO">
-				<Original>Dark Green</Original>
-				<Korean>어두운 녹색</Korean>
-			</Key>
-<!-- VAM LINE END -->
+<Project name="ZeroAinzLoadOut">
+	<Package name="ZeroAinzLoadOut">   
+				<Key ID="zlo_service_name">
+					<Original>Service</Original>
+					<English>Service</English>
+					<Italian>Servizio</Italian>
+					<Russian>Cервис</Russian>
+				</Key>
+				<Key ID="zlo_apply_text">
+					<Original>Apply</Original>
+					<English>Apply</English>
+					<Italian>Aplica</Italian>
+					<Russian>Применить</Russian>
+				</Key>
+				<Key ID="zlo_change_skin_text">
+					<Original>Change skin :</Original>
+					<English>Change skin :</English>
+					<Italian>Cambia skin :</Italian>
+					<Russian>Сменить скин :</Russian>
+				</Key>
+				<Key ID="zlo_ammo_text">
+					<Original>Rearm</Original>
+					<English>Rearm</English>
+					<Italian>Riarmo</Italian>
+					<Russian>   Пополнить БК</Russian>
+				</Key>
+				<Key ID="zlo_refuel_text">
+					<Original>Refuel</Original>
+					<English>Refuel</English>
+					<Italian>Pieno</Italian>
+					<Russian>Заправить</Russian>
+				</Key>
+				<Key ID="zlo_repair_text">
+					<Original>Repair</Original>
+					<English>Repair</English>
+					<Italian>Riparare</Italian>
+					<Russian>Починить</Russian>
+				</Key>
+				<Key ID="zlo_preset_text">
+					<Original>Preset :</Original>
+					<English>Preset :</English>
+					<Italian>Predefiniti :</Italian>
+					<Russian>Готовый набор :</Russian>
+				</Key>
+				<Key ID="zlo_mirror_text">
+					<Original>Mirror</Original>
+					<English>Mirror</English>
+					<Italian>Spechio</Italian>
+					<Russian>Отзеркалить</Russian>
+				</Key>
+				<Key ID="zlo_windowName_text">
+					<Original>Vehicle loadout</Original>
+					<English>Vehicle loadout</English>
+					<Italian>Manutenzione e rifornimento veicolo</Italian>
+					<Russian>Обслуживание техники</Russian>
+				</Key>
+				<Key ID="zlo_fuel_text">
+					<Original>Fuel</Original>
+					<English>Fuel</English>
+					<Italian>Serbatoio</Italian>
+					<Russian>Топливо</Russian>
+				</Key>
+				<Key ID="zlo_damage_text">
+					<Original>Damage</Original>
+					<English>Damage</English>
+					<Italian>Danno</Italian>
+					<Russian>Урон</Russian>
+				</Key>
+				<Key ID="zlo_empty_text">
+					<Original>Empty</Original>
+					<English>Empty</English>
+					<Italian>Vuoto</Italian>
+					<Russian>Пустой</Russian>
+				</Key>
+				<Key ID="zlo_camo_empty_text">
+					<Original>Default</Original>
+					<English>Default</English>
+					<Italian>Predefinita</Italian>
+					<Russian>Дефолт</Russian>
+				</Key>
+				<Key ID="zlo_spresets_text">
+					<Original>Presets</Original>
+					<English>Presets</English>
+					<Italian>Presets</Italian>
+					<Russian>Наборы</Russian>
+				</Key>
+				<Key ID="zlo_save_text">
+					<Original>Save</Original>
+					<English>Save</English>
+					<Italian>Salva</Italian>
+					<Russian>Сохр.</Russian>
+				</Key>
+				<Key ID="zlo_load_text">
+					<Original>Load</Original>
+					<English>Load</English>
+					<Italian>Apri</Italian>
+					<Russian>Загрузить</Russian>
+				</Key>
+				<Key ID="zlo_delete_text">
+					<Original>Delete</Original>
+					<English>Delete</English>
+					<Italian>Cancella</Italian>
+					<Russian>Удалить</Russian>
+				</Key>
+				<Key ID="zlo_emptyspace_text">
+					<Original>Write the name before saving</Original>
+					<English>Write the name before saving</English>
+					<Italian>Scrivere il nome prima</Italian>
+					<Russian>Напишите имя в поле</Russian>
+				</Key>
+				<Key ID="zlo_pres1_text">
+					<Original>Preset</Original>
+					<English>Preset</English>
+					<Italian>Preset</Italian>
+					<Russian>Набор</Russian>
+				</Key>
+				<Key ID="zlo_pres2_text">
+					<Original>was deleted!</Original>
+					<English>was deleted!</English>
+					<Italian>è stato cancellato!</Italian>
+					<Russian>был удалён!</Russian>
+				</Key>
+				<Key ID="zlo_exitesc_text">
+					<Original>LoadOut was canceled</Original>
+					<English>LoadOut was canceled</English>
+					<Italian>La Manutenzione è anullata</Italian>
+					<Russian>Техническое обслуживание отменено</Russian>
+				</Key>
+				<Key ID="zlo_presetloaded_text">
+					<Original>Selected preset was loaded</Original>
+					<English>Selected preset was loaded</English>
+					<Italian>Il preset scelto è stato caricato</Italian>
+					<Russian>Выбранный набор загружен</Russian>
+				</Key>
+				<Key ID="zlo_saved_text">
+					<Original>was saved</Original>
+					<English>was saved</English>
+					<Italian>è stato salvato</Italian>
+					<Russian>был сохранён</Russian>
+				</Key>
+				<Key ID="zlo_wait_text">
+					<Original>Time left for LoadOut</Original>
+					<English>Time left for LoadOut</English>
+					<Italian>Tempo rimasto per la manutenzione</Italian>
+					<Russian>Время ожидания до окончания обслуживания</Russian>
+				</Key>
+				<Key ID="zlo_sec_text">
+					<Original>sec.</Original>
+					<English>sec.</English>
+					<Italian>sec.</Italian>
+					<Russian>Сек.</Russian>
+				</Key>
+				<Key ID="zlo_serviceeeady_text">
+					<Original>Vehicle is Ready</Original>
+					<English>Vehicle is Ready</English>
+					<Italian>La Manutenzione è finita</Italian>
+					<Russian>Техническое обслуживание завершено</Russian>
+				</Key>
+				<Key ID="zlo_helptext_text">
+					<Original>Info</Original>
+					<English>Info</English>
+					<Italian>Info</Italian>
+					<Russian>Справка</Russian>
+				</Key>
 	</Package>
 </Project>
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="CAU_xChat">
+	<Package name="CAU_xChat">
+		<Container name="Channel_Names">
+			<Key ID="STR_CAU_xChat_channel_custom">
+				<Original>Custom channel</Original>
+				<English>Custom channel</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_channels_custom">
+				<Original>Custom channels</Original>
+				<English>Custom channels</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_channel_command">
+				<Original>Command Logs</Original>
+				<English>Command Logs</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_channel_system">
+				<Original>System logs</Original>
+				<English>System logs</English>
+			</Key>
+		</Container>
+		<Container name="Chat_UI">
+			<Key ID="STR_CAU_xChat_chat_character_count">
+				<Original>Character count: %1/150</Original>
+				<English>Character count: %1/150</English>
+			</Key>
+		</Container>
+		<Container name="Interrupt_UI">
+			<Key ID="STR_CAU_xChat_interrupt_history">
+				<Original>Extended Chat History</Original>
+				<English>Extended Chat History</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_interrupt_settings">
+				<Original>Extended Chat Settings</Original>
+				<English>Extended Chat Settings</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_interrupt_history_ww2">
+				<Original>History</Original>
+				<English>History</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_interrupt_settings_ww2">
+				<Original>Settings</Original>
+				<English>Settings</English>
+			</Key>
+		</Container>
+		<Container name="History_UI">
+			<Key ID="STR_CAU_xChat_history_title">
+				<Original>Extended Chat History</Original>
+				<English>Extended Chat History</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_filter_title">
+				<Original>Filter Options</Original>
+				<English>Filter Options</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_time_past">
+				<Original>%1h %2m ago</Original>
+				<English>%1h %2m ago</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_sent_by">
+				<Original>Sent by:</Original>
+				<English>Sent by:</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_channel">
+				<Original>Channel:</Original>
+				<English>Channel:</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_received">
+				<Original>Received:</Original>
+				<English>Received:</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_history_message">
+				<Original>Message:</Original>
+				<English>Message:</English>
+			</Key>
+		</Container>
+		<Container name="Settings_UI">
+			<Key ID="STR_CAU_xChat_settings_title">
+				<Original>Extended Chat Settings</Original>
+				<English>Extended Chat Settings</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_save_button">
+				<Original>Save Changes</Original>
+				<English>Save Changes</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_saved_alert">
+				<Original>settings updated</Original>
+				<English>settings updated</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_pending_changes">
+				<Original>Do you wish to discard your unsaved changes?</Original>
+				<English>Do you wish to discard your unsaved changes?</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_reset_button">
+				<Original>Revert</Original>
+				<English>Revert</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_reset_confirm">
+				<Original>Are you sure you want to revert your settings to the default values?&lt;br/&gt;This action is irreversible.</Original>
+				<English>Are you sure you want to revert your settings to the default values?&lt;br/&gt;This action is irreversible.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_reset_alert">
+				<Original>settings reverted to default values</Original>
+				<English>settings reverted to default values</English>
+			</Key>
 
-<Project name="Pylon Preset Allocator for Plane">
-	<Package name="Pylon Preset Allocator for Plane">
-<!-- PPAP LINE START -->
-<!-- Function/기능부 -->
-			<Key ID="STR_PPAP_INITIALIZED">
-				<Original>Pylon Preset Allocator for Plane initialized</Original>
-				<Korean>항공기 무장 프리셋 로더 불러오기 및 초기화 완료</Korean>
+			<!-- Configuration Panel -->
+			<Key ID="STR_CAU_xChat_settings_configuration_title">
+				<Original>Configuration</Original>
+				<English>Configuration</English>
 			</Key>
-			<Key ID="STR_PPAP_MAIN_MENU_NAME">
-				<Original>Pylon Preset Allocator for Plane</Original>
-				<Korean>차량 형상 관리자</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_command_prefix_label">
+				<Original>Chat command prefix</Original>
+				<English>Chat command prefix</English>
 			</Key>
-			<Key ID="STR_PPAP_CLOSE_MENU">
-				<Original>Close</Original>
-				<Korean>닫기</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_command_prefix_desc">
+				<Original>The character(s) required at the start of your message to use a chat command</Original>
+				<English>The character(s) required at the start of your message to use a chat command</English>
 			</Key>
-			<Key ID="STR_PPAP_CURRENT_VEHICLE">
-				<Original>Current Vehicle :</Original>
-				<Korean>현  재    차  량 :</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_history_limit_label">
+				<Original>Message history limit</Original>
+				<English>Message history limit</English>
 			</Key>
-			<Key ID="STR_PPAP_APPLY">
-				<Original>Apply</Original>
-				<Korean>적용</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_history_limit_desc">
+				<Original>After reaching the maximum value, the oldest message will be removed to allow for a new message to be added. Larger values can cause a decrease in performance.</Original>
+				<English>After reaching the maximum value, the oldest message will be removed to allow for a new message to be added. Larger values can cause a decrease in performance.</English>
 			</Key>
-			<Key ID="STR_PPAP_DONE">
-				<Original>Preset Applied\nRearm your vehicle.</Original>
-				<Korean>프리셋 적용됨\n차량을 재보급하십시오.</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_history_limit_option">
+				<Original>%1 messages</Original>
+				<English>%1 messages</English>
 			</Key>
-			<Key ID="STR_PPAP_PRESET">
-				<Original>Preset</Original>
-				<Korean>프리셋</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_feed_limit_label">
+				<Original>Message feed limit</Original>
+				<English>Message feed limit</English>
 			</Key>
-			<Key ID="STR_PPAP_NO_PRESET">
-				<Original>There is no preset.</Original>
-				<Korean>프리셋이 없습니다.</Korean>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_feed_limit_desc">
+				<Original>After reaching the maximum value, the oldest message will fade out to make room for the new message. Larger values may result in unexpected UI behaviour.</Original>
+				<English>After reaching the maximum value, the oldest message will fade out to make room for the new message. Larger values may result in unexpected UI behaviour.</English>
 			</Key>
-<!-- PPAP LINE END -->
-	</Package>
-</Project>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_feed_limit_option">
+				<Original>%1 messages</Original>
+				<English>%1 messages</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_ttl_label">
+				<Original>Message feed time-to-live (TTL)</Original>
+				<English>Message feed time-to-live (TTL)</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_ttl_desc">
+				<Original>The maximum duration of time a message will be visible in the feed. Once a message exceeds the TTL value it will fade out.</Original>
+				<English>The maximum duration of time a message will be visible in the feed. Once a message exceeds the TTL value it will fade out.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_message_ttl_option">
+				<Original>%1 seconds</Original>
+				<English>%1 seconds</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_autocomplete_keybind_label">
+				<Original>Autocomplete keybind: %1</Original>
+				<English>Autocomplete keybind: %1</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_autocomplete_keybind_desc">
+				<Original>Press this key to autocomplete the first item in the suggestion list.</Original>
+				<English>Press this key to autocomplete the first item in the suggestion list.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_autocomplete_keybind_edit_tooltip">
+				<Original>Press any key to set it as your new autocomplete keybind.</Original>
+				<English>Press any key to set it as your new autocomplete keybind.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_toggle_chat_feed_keybind_label">
+				<Original>Show/Hide chat feed keybind: %1</Original>
+				<English>Show/Hide chat feed keybind: %1</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_toggle_chat_feed_keybind_desc">
+				<Original>Press this key to show/hide the chat feed.</Original>
+				<English>Press this key to show/hide the chat feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_toggle_chat_feed_keybind_edit_tooltip">
+				<Original>Press any key to set it as your new show/hide chat feed keybind.</Original>
+				<English>Press any key to set it as your new show/hide chat feed keybind.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_hide_chat_feed_onload_streamsafe_label">
+				<Original>Auto-hide chat feed in streamer mode</Original>
+				<English>Auto-hide chat feed in streamer mode</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_configuration_hide_chat_feed_onload_streamsafe_desc">
+				<Original>Automatically hide the chat feed when joining a mission if stream friendly ui is enabled.</Original>
+				<English>Automatically hide the chat feed when joining a mission if stream friendly ui is enabled.</English>
+			</Key>
 
-<Project name="Trait Changer">
-	<Package name="Trait Changer">
-<!-- TC LINE START -->
-<!-- Function/기능부 -->
-			<Key ID="STR_TC_INITIALIZED">
-				<Original>Trait Changer initialized</Original>
-				<Korean>특기 변경기 불러오기 및 초기화 완료</Korean>
+			<!-- Appearance Panel -->
+			<Key ID="STR_CAU_xChat_settings_appearance_title">
+				<Original>Appearance</Original>
+				<English>Appearance</English>
 			</Key>
-			<Key ID="STR_TC_MAIN_MENU_NAME">
-				<Original>Trait Changer</Original>
-				<Korean>특기 변경기</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_font_label">
+				<Original>Message feed text font</Original>
+				<English>Message feed text font</English>
 			</Key>
-			<Key ID="STR_TC_CLOSE_MENU">
-				<Original>Close</Original>
-				<Korean>닫기</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_font_desc">
+				<Original>The font type used on text in the message feed.</Original>
+				<English>The font type used on text in the message feed.</English>
 			</Key>
-			<Key ID="STR_TC_CURRENT_TRAIT">
-				<Original>Current Trait :</Original>
-				<Korean>현  재    특  기 :</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_size_label">
+				<Original>Message feed text size: %1x</Original>
+				<English>Message feed text size: %1x</English>
 			</Key>
-			<Key ID="STR_TC_APPLY">
-				<Original>Apply</Original>
-				<Korean>적용</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_size_desc">
+				<Original>The font size used on text in the message feed.</Original>
+				<English>The font size used on text in the message feed.</English>
 			</Key>
-			<Key ID="STR_TC_TRAIT">
-				<Original>Trait</Original>
-				<Korean>특기</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_color_label">
+				<Original>Message text color</Original>
+				<English>Message text color</English>
 			</Key>
-			<Key ID="STR_TC_NO_TRAIT">
-				<Original>Rifleman</Original>
-				<Korean>소총수</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_color_desc">
+				<Original>The font color used on text in the message feed.</Original>
+				<English>The font color used on text in the message feed.</English>
 			</Key>
-			<Key ID="STR_TC_NO_TRAIT_INFO">
-				<Original>
-					Rifleman
-					&lt;br/&gt;&lt;br/&gt;
-					Rifleman is basic role.
-				</Original>
-				<Korean>
-					소총수
-					&lt;br/&gt;&lt;br/&gt;
-					소총수는 기본적인 보직입니다.</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_feed_bg_color_label">
+				<Original>Message background color</Original>
+				<English>Message background color</English>
 			</Key>
-			<Key ID="STR_TC_MEDIC">
-				<Original>Combat Life Saver</Original>
-				<Korean>전투의무병</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_feed_bg_color_desc">
+				<Original>The background color of messages in the message feed.</Original>
+				<English>The background color of messages in the message feed.</English>
 			</Key>
-			<Key ID="STR_TC_MEDIC_INFO">
-				<Original>
-					Combat Life Saver
-					&lt;br/&gt;&lt;br/&gt;
-					Combat Life Saver is specialized in treating wounded soldier in field.
-				</Original>
-				<Korean>
-					전투의무병
-					&lt;br/&gt;&lt;br/&gt;
-					전투의무병은 야전에서 부상당한 군인을 치료하는 것에 특화되어있습니다.
-				</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_mention_color_label">
+				<Original>Mention text color</Original>
+				<English>Mention text color</English>
 			</Key>
-			<Key ID="STR_TC_REPAIR_SPECIALIST">
-				<Original>Repair Specialist</Original>
-				<Korean>정비 전문가</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_text_mention_color_desc">
+				<Original>The font color used on mentions in the message feed.</Original>
+				<English>The font color used on mentions in the message feed.</English>
 			</Key>
-			<Key ID="STR_TC_REPAIR_SPECIALIST_INFO">
-				<Original>
-					Repair Specialist
-					&lt;br/&gt;&lt;br/&gt;
-					Repair Specialist is specialized in fixing damaged vehicles in field.
-				</Original>
-				<Korean>
-					정비 전문가
-					&lt;br/&gt;&lt;br/&gt;
-					정비 전문가는 야전에서 피해를 입은 차량들을 고치는데 특화되어있습니다.
-				</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_feed_mention_bg_color_label">
+				<Original>Mention background color</Original>
+				<English>Mention background color</English>
 			</Key>
-			<Key ID="STR_TC_EXPLOSIVE_SPECIALIST">
-				<Original>Explosive Specialist</Original>
-				<Korean>폭발물 전문가</Korean>
+			<Key ID="STR_CAU_xChat_settings_appearance_feed_mention_bg_color_desc">
+				<Original>The background color of messages in the message feed when you are mentioned.</Original>
+				<English>The background color of messages in the message feed when you are mentioned.</English>
 			</Key>
-			<Key ID="STR_TC_EXPLOSIVE_SPECIALIST_INFO">
-				<Original>
-					Explosive Specialist
-					&lt;br/&gt;&lt;br/&gt;
-					Explosive Specialist is specialized in using explosive especially demining.
-				</Original>
-				<Korean>
-					폭발물 전문가
-					&lt;br/&gt;&lt;br/&gt;
-					폭발물 전문가는 폭발물을 다루는 것, 특히 지뢰제거에 특화되어있습니다.
-				</Korean>
-			</Key>
-			<Key ID="STR_TC_DONE">
-				<Original>You are now %1.</Original>
-				<Korean>%1이(가) 되었습니다.</Korean>
-			</Key>
-			<Key ID="STR_TC_DONE_ALREADY">
-				<Original>You are already %1.</Original>
-				<Korean>이미 %1 입니다.</Korean>
-			</Key>
-			<Key ID="STR_TC_LIMIT">
-				<Original>You cannot change\nyour trait to %1.\nTotal %2 players are\nallowed to have this trait.</Original>
-				<Korean>현재 특기를 %1로\n변경할 수 없습니다.\n총 %2명의 플레이어가\n이 특기를 가질 수 있습니다.</Korean>
-			</Key>
-<!-- TC LINE END -->
-	</Package>
-</Project>
 
-<Project name="NRE Earplugs">
-	<Package name="NREEarplugs">
-		<Key ID="STR_NREEP_IN_HINT">
-			<Original>귀마개 적용!</Original>
-			<English>You have insert the earplugs!</English>
-			<Russian>Беруши вставлены!</Russian>
-			<German>Du hast die Ohrstoepsel eingesteckt!</German>
-			<Spanish>¡Te has puesto los tapones!</Spanish>
-		</Key>
-		<Key ID="STR_NREEP_OUT_HINT">
-			<Original>귀마개 해제!</Original>
-			<English>You have removed the earplugs!</English>
-			<Russian>Беруши вытащены!</Russian>
-			<German>Du hast die Ohrstoepsel rausgenommen!</German>
-			<Spanish>¡Te has quitado los tapones!</Spanish>
-		</Key>
-		<Key ID="STR_NREEP_IN_ACTION">
-			<Original>귀마개 적용!</Original>
-			<English>Insert earplugs</English>
-			<Russian>Вставить беруши</Russian>
-			<German>Ohrstoepsel einstecken</German>
-			<Spanish>Ponerte los tapones</Spanish>
-		</Key>
-		<Key ID="STR_NREEP_OUT_ACTION">
-			<Original>귀마개 해제!</Original>
-			<English>Remove earplugs</English>
-			<Russian>Вытащить беруши!</Russian>
-			<German>Ohrstoepsel rausnehmen</German>
-			<Spanish>Quitarte los tapones</Spanish>
-		</Key>
+			<!-- Filters Panel -->
+			<Key ID="STR_CAU_xChat_settings_filter_title">
+				<Original>Filters</Original>
+				<English>Filters</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_connect_log_label">
+				<Original>Player connected logs</Original>
+				<English>Player connected logs</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_connect_log_desc">
+				<Original>Show player connected logs in the message feed.</Original>
+				<English>Show player connected logs in the message feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_disconnect_log_label">
+				<Original>Player disconnected logs</Original>
+				<English>Player disconnected logs</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_disconnect_log_desc">
+				<Original>Show player disconnected logs in the message feed.</Original>
+				<English>Show player disconnected logs in the message feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_battleye_kick_log_label">
+				<Original>BattlEye kick/ban logs</Original>
+				<English>BattlEye kick/ban logs</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_battleye_kick_log_desc">
+				<Original>Show BattlEye kick and ban logs in the message feed.</Original>
+				<English>Show BattlEye kick and ban logs in the message feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_kill_log_label">
+				<Original>Death message logs</Original>
+				<English>Death message logs</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_kill_log_desc">
+				<Original>Show death message logs in the message feed.</Original>
+				<English>Show death message logs in the message feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_channel_desc">
+				<Original>Show %1 messages in the message feed</Original>
+				<English>Show %1 messages in the message feed</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_label">
+				<Original>Censor bad words and phrases</Original>
+				<English>Censor bad words and phrases</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_desc">
+				<Original>Censor specified bad words and phrases in messages.</Original>
+				<English>Censor specified bad words and phrases in messages.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_add_title">
+				<Original>Add a new word or phrase to the language filter</Original>
+				<English>Add a new word or phrase to the language filter</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_add_tooltip">
+				<Original>Add new word or phrase</Original>
+				<English>Add new word or phrase</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_remove_title">
+				<Original>Remove one or more words and phrases from the language filter</Original>
+				<English>Remove one or more words and phrases from the language filter</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_bad_language_remove_tooltip">
+				<Original>Remove one or more words and phrases</Original>
+				<English>Remove one or more words and phrases</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_label">
+				<Original>Website whitelist</Original>
+				<English>Website whitelist</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_desc">
+				<Original>Whitelist specific websites to be clickable in messages in the history viewer.</Original>
+				<English>Whitelist specific websites to be clickable in messages in the history viewer.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_add_title">
+				<Original>Add a new domain name to the website whitelist</Original>
+				<English>Add a new domain name to the website whitelist</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_add_tooltip">
+				<Original>Add new website</Original>
+				<English>Add new website</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_remove_title">
+				<Original>Remove one or more domain names from the website whitelist</Original>
+				<English>Remove one or more domain names from the website whitelist</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_website_whitelist_remove_tooltip">
+				<Original>Remove one or more websites</Original>
+				<English>Remove one or more websites</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_muted_players_label">
+				<Original>Muted players</Original>
+				<English>Muted players</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_muted_players_desc">
+				<Original>Mute players to block their messages from printing to the chat feed.</Original>
+				<English>Mute players to block their messages from printing to the chat feed.</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_muted_players_add">
+				<Original>Mute one or more players</Original>
+				<English>Mute one or more players</English>
+			</Key>
+			<Key ID="STR_CAU_xChat_settings_filter_muted_players_remove">
+				<Original>Unmute one or more players</Original>
+				<English>Unmute one or more players</English>
+			</Key>
+		</Container>
 	</Package>
 </Project>

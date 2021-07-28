@@ -42,9 +42,6 @@ if !(isnil "LDL_cam_rotating_center") then {
 
 call ghst_fnc_clear_respawn_tents;//remove respawn tents from map
 
-{deletevehicle _x;} foreach EA_spawned_things;
-EA_spawned_things = [];
-
 //Enemy Unit list
 call ghst_fnc_unitlist;
 

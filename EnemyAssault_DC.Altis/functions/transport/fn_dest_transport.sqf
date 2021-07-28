@@ -15,7 +15,7 @@ if (fuel _air1 < 0.25) exitwith {
 	[_air1, _msg] remoteExec ["sideChat"];
 };
 
-if (surfaceiswater _pos) exitwith {[_air1, "Cannot land in water"] remoteExec ["sideChat"];};
+//if (surfaceiswater _pos) exitwith {[_air1, "Cannot land in water"] remoteExec ["sideChat"];};
 
 _lzpad = "Land_HelipadEmpty_F" createVehicle _pos;
 _lzpad_mark = [_pos,"ColorGreen","Drop Off","mil_end"] call ghst_fnc_mark_point;
@@ -36,8 +36,9 @@ waituntil { (_pos distance2D _air1 < 100) or {!(alive _air1)} or {!(canmove _air
 _air1 land "LAND";
 //_air1 flyInHeight 0;
 
-waituntil { ((getposatl _air1) select 2 < 1) or {(unitReady _air1)} or {!(alive _air1)} or {!(canmove _air1)} or {!(alive (driver _air1))} };	
+waituntil { ((getposatl _air1) select 2 < 1) or {(isTouchingGround _air1)} or {(unitReady _air1)} or {!(alive _air1)} or {!(canmove _air1)} or {!(alive (driver _air1))} };	
 _air1 flyInHeight 0;
+_air1 setDamage 0;
 deletevehicle _lzpad;
 deletemarker _lzpad_mark;
 
@@ -48,7 +49,7 @@ deletemarker _lzpad_mark;
 		{if !(isnil "_x") then {deletevehicle _x;};} foreach units _transportgrp;
 		{if !(isnil "_x") then {_x setfuel 0.2;};} foreach units _escortgrp;
 		deletevehicle _air1;
-		deletegroup _transportgrp;
+		_transportgrp deleteGroupWhenEmpty true;
 	} else {
 		_air1 engineOn false;
 		_air1 action ["WheelsBrakeOn", 1];

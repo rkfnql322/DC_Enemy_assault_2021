@@ -26,7 +26,6 @@ for "_x" from 0 to (_grpnum)-1 do {
 
 	_veh = selectRandom _vehlist;
 	_armor1 = createVehicle [_veh,_marker, [], 0, "NONE"];
-	EA_spawned_things pushBack _armor1;
 	//sleep 1;
 	_eGrp = createGroup _sideguards;
 

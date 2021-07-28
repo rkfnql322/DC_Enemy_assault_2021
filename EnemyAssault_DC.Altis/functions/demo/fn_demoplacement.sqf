@@ -7,7 +7,7 @@ _chargearray = _this select 0;
 	_typecharge = _chargearray select 0;
 	_typemagazine = _chargearray select 1;
 _expname = _this select 1;
-_obj = cursorTarget;
+_obj = cursorObject;//cursorTarget;
 _unit = player;
 
 _stepsize = 0.05;

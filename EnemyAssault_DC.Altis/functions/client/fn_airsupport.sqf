@@ -1,4 +1,4 @@
-//V1.4 Script by: Ghost - calls in a support aircraft until fuel is low or out of ammo then leaves
+//V1.5 Script by: Ghost - calls in a support aircraft until fuel is low or out of ammo then leaves
 //
 private ["_spawnmark","_type","_tos","_radaltarray","_rad","_flyheight","_delay","_markunitsarray","_markunits","_mcolor","_supportvar","_veh_name","_dir","_pos","_chute1","_air1_array","_air1","_wGrp"];
 #include "..\dlg\def_VEHsel.hpp"
@@ -103,7 +103,7 @@ _air1_array = [_spawnmark, _dir, _objselected, _wGrp] call BIS_fnc_spawnVehicle;
 _air1 = _air1_array select 0;
 _air1 setpos [getpos _air1 select 0, getpos _air1 select 1, _flyheight];
 _air1 setVelocity [55 * (sin _dir), 55 * (cos _dir), 0];
-
+[_air1, "ColorGrey", "mil_DOT", _veh_name] spawn ghst_fnc_tracker;
 player setVariable [_supportvar, Time + _delay];
 
 sleep 1;

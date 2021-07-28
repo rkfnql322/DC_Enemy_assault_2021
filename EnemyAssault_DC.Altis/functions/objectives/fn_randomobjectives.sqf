@@ -1,8 +1,8 @@
-//V1.2.3 - By Ghost modified
+//V1.2.4 - By Ghost modified
 //Randomly selects and generates objectives. Requires funciton module.
 
 //if (!isserver) exitwith {};
-private ["_position_array","_radarray","_numobjs","_campmark","_locselname","_objlist","_commanderlist","_transport_heli_list","_ammobox_list","_ghst_side","_PARAM_AISkill","_o","_random_pos","_buildarray","_curtasks","_curtasks_num","_max_reinf","_timedelay"];
+private ["_position_array","_radarray","_numobjs","_campmark","_locselname","_objlist","_commanderlist","_transport_heli_list","_ammobox_list","_ghst_aa_list","_ghst_arty_list","_ghst_side","_PARAM_AISkill","_o","_random_pos","_buildarray","_curtasks","_curtasks_num","_max_reinf","_timedelay"];
 
 //check to see if there are multiple positions
 
@@ -191,7 +191,7 @@ for "_o" from 1 to (_numobjs) do {
 			case "Acquireobj":
 			{
 			private ["_acquiredobjsel"];
-			_acquiredobjsel = selectRandom ["Land_Cargo10_blue_F", "Land_Cargo10_brick_red_F", "Land_Cargo10_cyan_F", "Land_Cargo10_grey_F", "Land_Cargo10_light_blue_F", "Land_Cargo10_light_green_F", "Land_Cargo10_military_green_F", "Land_Cargo10_orange_F", "Land_Cargo10_red_F", "Land_Cargo10_sand_F", "Land_Cargo10_white_F", "Land_Cargo10_yellow_F"];
+			_acquiredobjsel = selectRandom ["Land_Cargo10_blue_F", "Land_Cargo10_brick_red_F", "Land_Cargo10_cyan_F", "Land_Cargo10_grey_F", "Land_Cargo10_light_blue_F", "Land_Device_slingloadable_F", "Land_Pod_Heli_Transport_04_ammo_F", "Land_Pod_Heli_Transport_04_box_F", "Land_Pod_Heli_Transport_04_fuel_F", "Land_Pod_Heli_Transport_04_repair_F", "Land_Cargo10_light_green_F", "Land_Cargo10_military_green_F", "Land_Cargo10_orange_F", "Land_Cargo10_red_F", "Land_Cargo10_sand_F", "Land_Cargo10_white_F", "Land_Cargo10_yellow_F"];
 			[_random_pos,_radarray,_acquiredobjsel,(getposasl obj_drop),(_PARAM_AISkill/10),_locselname,[true,"ColorRed",[200,200]],_ghst_side] call ghst_fnc_randomacquire;
 			};
 		};

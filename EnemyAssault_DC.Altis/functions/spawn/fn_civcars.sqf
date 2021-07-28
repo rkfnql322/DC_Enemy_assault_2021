@@ -37,7 +37,6 @@ for "_x" from 0 to (_cars) do {
 	_pos =  [(getposatl _roadssel select 0)-5 * sin(random 359),(getposatl _roadssel select 1)-5 * cos(random 359)]; 
 	_vehcivsel = selectRandom _vehcivlist;
 	_veh = createVehicle [_vehcivsel,_pos, [], 0, "NONE"];
-	EA_spawned_things pushBack _veh;
 	_veh setFuel (0.3 + random 0.5);
 	if (isnil "_direction") then {
 	_veh setdir (random 360);

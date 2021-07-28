@@ -77,7 +77,6 @@ for "_s" from 0 to (count _roofposarray)-1 do {
 	if (! isNil "_buildpos") then {
 		_gunsel = selectRandom _gunlist;
 		_mgun = createVehicle [_gunsel, (_buildpos), [], 0, "NONE"];
-		EA_spawned_things pushBack _mgun;
 		_mgun setdir (random 360);
 		_mgun setposatl _buildpos;
 		//spawn Unit for MG

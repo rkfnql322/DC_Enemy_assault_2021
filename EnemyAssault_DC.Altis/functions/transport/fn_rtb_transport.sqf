@@ -24,6 +24,7 @@ _air1 land "LAND";
 waituntil { (unitReady _air1) or {!(alive _air1)} or {!(canmove _air1)} or {!(alive (driver _air1))}};	
 
 _air1 flyInHeight 0;
+_air1 setDamage 0;
 	if (!(alive _air1) or {!(canmove _air1)} or {!(alive (driver _air1))}) then {
 		_msg = format ["We lost %1 transport helicopter.", _pname];
 		[[WEST,"AirBase"], _msg] remoteExec ["sideChat"];
@@ -36,11 +37,13 @@ _air1 flyInHeight 0;
 		unassignvehicle _x;
 		_x action ["EJECT", _air1];
 	} foreach ((crew _air1) select 4);
-*/	
+*/
+
 sleep 5;
 
 {if !(isnil "_x") then {deletevehicle _x;};} foreach units _transportgrp;
 {if !(isnil "_x") then {deletevehicle _x;};} foreach units _escortgrp;
 {if !(isnil "_x") then {deletevehicle _x;};} foreach _heloarray;
-deletegroup _transportgrp;
-deletegroup _escortgrp;
+deletevehicle _air1;
+_transportgrp deleteGroupWhenEmpty true;
+_escortgrp deleteGroupWhenEmpty true;

@@ -19,6 +19,14 @@ if ((isClass(configFile >> "CfgPatches" >> "rhs_main")) and (_PARAM_RHS == 1)) t
 
 enableSaving [false, false];
 
+if !(worldName == "Enoch") then {
+	_mrkr = getPosATL base;
+	"respawn_west" setMarkerPosLocal [_mrkr select 0, _mrkr select 1,  _mrkr select 2];
+} else {
+	_mrkr = getPosASL base;
+	"respawn_west" setMarkerPosLocal [_mrkr select 0, _mrkr select 1,  (_mrkr select 2) + 0.2];
+};
+
 CIVILIAN setFriend [WEST, 1];
 WEST setFriend [CIVILIAN, 1];
 EAST setFriend [CIVILIAN, 1];
@@ -51,65 +59,5 @@ if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
 tf_no_auto_long_range_radio = true;
 
 //["Preload"] call BIS_fnc_arsenal;
-
-//------------- DCinside Arma m.gall Server ------------------//
-
-//3Dmarkers//
-[] execVM "scripts\3Dmarkers.sqf";
-
-//BaseFire//
-[] execVM "scripts\safebase.sqf";
-
-//notice
-[] execVM "scripts\s_Welcome_Rule.sqf";
-
-//earplug
-[] execVM "scripts\NRE_earplugs.sqf";
-
-//advancedSlingLoad
-[] execVM "scripts\fn_advancedSlingLoadingInit.sqf";
-
-//compass
-[] execVM "scripts\fn_voyagerCompass.sqf";
-
-//advancedRappellingInit
-[] execVM "scripts\fn_advancedRappellingInit.sqf";
-
-//advancedUrbanRappellingInit
-[] execVM "scripts\fn_advancedUrbanRappellingInit.sqf";
-
-//advancedTowingInit
-[] execVM "scripts\fn_advancedTowingInit.sqf";
-
-//DayMessages
-[] execVM "scripts\DayMessages.sqf";
-
-//Wa VAM
-[] execVM "VAM_GUI\VAM_GUI_init.sqf";
-
-//Wa PPAP Sans Papyrus undertale
-[] execVM "PPAP\PPAP_init.sqf";
-
-//tc
-[] execVM "Trait_Changer\TC_init.sqf";
-
-//CRS real
-null=[]execVM"CRS\init.sqf";
-
-//igiload
-_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
-
-// The years flow
-[] execVM "etc\acc_time_server.sqf";
-
-// flip
-[] execVM "scripts\fn_flipVeh.sqf";
-
-// nt
-[] execVM "NameTags.sqf";
-
-//Strobe//
-if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
-if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
-[] execVM "strobe\strobe.sqf";
-player addMPEventHandler ["MPRespawn", {Null = _this execVM "strobe\strobe.sqf";}];
+AST_fnc_db_fetch_money = compileFinal preprocessFileLineNumbers "ast\db_fetch_money.sqf";
+AST_fnc_db_save = compileFinal preprocessFileLineNumbers "ast\db_save.sqf";

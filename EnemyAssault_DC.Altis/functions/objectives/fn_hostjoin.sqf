@@ -1,5 +1,5 @@
 /*
-V1.3.1 Script by: Ghost put this in POW init: this setCaptive true; this setBehaviour "Careless"; [[_pow,["<t size='1.5' shadow='2' color='#2EFEF7'>Rescue Hostage</t>", "call ghst_fnc_hostjoin", [], 6, true, true, "","(alive _target)"]],"ghst_fnc_addaction",true,true] spawn BIS_fnc_MP;
+V1.3.2 Script by: Ghost put this in POW init: this setCaptive true; this setBehaviour "Careless"; [[_pow,["<t size='1.5' shadow='2' color='#2EFEF7'>Rescue Hostage</t>", "call ghst_fnc_hostjoin", [], 6, true, true, "","(alive _target)"]],"ghst_fnc_addaction",true,true] spawn BIS_fnc_MP;
 */
 private ["_host","_caller","_id"];
 
@@ -25,6 +25,9 @@ if !(isnil "AGM_Interaction_fnc_setCaptivityStatus") then {
 } else {
 	_host setCaptive false;
 };
+//_host unassignItem "G_Blindfold_01_white_F";
+//_host removeItem "G_Blindfold_01_white_F";
+_host unlinkItem "G_Blindfold_01_white_F";
 _host setVariable ["notrescued", false, true];
 _host domove (position _caller);
 

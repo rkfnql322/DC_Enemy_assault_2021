@@ -1,5 +1,5 @@
 /*
-V2 Script by: Ghost put this in an objects init line - halo addAction ["<t size='1.5' shadow='2' color='#00ffff'>HALO</t> <img size='3' color='#00ffff' shadow='2' image='\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa'/>", "call ghst_fnc_halo", [false,1000,60,false], 5, true, true, "","alive _target"];
+V2.1 Script by: Ghost put this in an objects init line - halo addAction ["<t size='1.5' shadow='2' color='#00ffff'>HALO</t> <img size='3' color='#00ffff' shadow='2' image='\A3\Air_F_Beta\Parachute_01\Data\UI\Portrait_Parachute_01_CA.paa'/>", "call ghst_fnc_halo", [false,1000,60,false], 5, true, true, "","alive _target"];
 */
 
 _host = _this select 0;
@@ -92,6 +92,7 @@ ghst_halo_ventralpack = {
 		};
 	};*/
 };
+_grp1 = group _caller;
 
 if (vehicle _caller == _caller) then {
 //Unit(s) not in aircraft
@@ -112,12 +113,17 @@ if (vehicle _caller == _caller) then {
 	};
 	_pos = clickpos;
 
-	if (_typehalo) then {
-	
-		_grp1 = group _caller;
+	if (_typehalo and (leader _grp1 == _caller)) then {
+		private ["_sp"];
+		_dir = getDir _caller;
+		_sp = 5;
 		{
-			_x setpos [_pos select 0, _pos select 1, _althalo];
-			[_saveLoadOut,_x] spawn ghst_halo_ventralpack;
+			if (!(isplayer _x) or (_x == _caller)) then { 
+				//_x setpos [_pos select 0, _pos select 1, _althalo];
+				_x setpos [(_pos select 0) + (cos _dir * _sp), (_pos select 1) - (sin _dir * _sp), _althalo];
+				[_saveLoadOut,_x] spawn ghst_halo_ventralpack;
+				_sp = _sp + 5;
+			};
 		} foreach units _grp1;
 
 	} else {
@@ -130,17 +136,17 @@ if (vehicle _caller == _caller) then {
 } else {
 //Unit(s) in aircraft
 	
-	if (_typehalo) then {
-	
-		_grp1 = group _caller;
+	if (_typehalo and (leader _grp1 == _caller)) then {
 		
 		{
-			_x allowdamage false;
-			unassignVehicle (_x);
-			(_x) action ["EJECT", vehicle _x];
-			sleep 0.5;
-			_x allowdamage true;
-			[_saveLoadOut,_x] spawn ghst_halo_ventralpack;
+			if (!(isplayer _x) or (_x == _caller)) then { 
+				_x allowdamage false;
+				unassignVehicle (_x);
+				(_x) action ["EJECT", vehicle _x];
+				sleep 0.5;
+				_x allowdamage true;
+				[_saveLoadOut,_x] spawn ghst_halo_ventralpack;
+			};
 		} foreach units _grp1;
 
 	} else {
@@ -155,33 +161,75 @@ if (vehicle _caller == _caller) then {
 	};
 };
 
-if (getpos _caller select 2 > (_altchute + 100)) then {
+if (_typehalo and (leader _grp1 == _caller)) then {
 
-openMap false;
+	if (getpos _caller select 2 > (_altchute + 100)) then {
 
-sleep 5;
+		openMap false;
 
-_caller groupchat "Have a nice trip";// and dont forget to open your chute!";
+		sleep 5;
 
-//auto open before impact
-waituntil {(position _caller select 2) <= _altchute};
+		_caller groupchat "Have a nice trip";// and dont forget to open your chute!";
+		
+		//auto open before impact
+		waituntil {(position _caller select 2) <= _altchute + 50};
 
-if !((vehicle _caller) iskindof "ParachuteBase") then {
+		titleCut ["", "BLACK IN", 2];
+		
+		{
+		
+			if (!((vehicle _x) iskindof "ParachuteBase") and (!(isplayer _x) or (_x == _caller))) then {
 
-	_caller groupchat "Deploying Chute";
+				_x groupchat "Deploying Chute";
 
-	titleCut ["", "BLACK IN", 2];
+				_para = "Steerable_Parachute_F" createVehicle position _x;
+				_para setpos position _x;
+				_para setdir direction _x;
+				_vel = velocity _x;
+				_x assignAsDriver _para;
+				_x moveindriver _para;
+				_para lock false;
 
-	_para = "Steerable_Parachute_F" createVehicle position _caller;
-	_para setpos position _caller;
-	_para setdir direction _caller;
-	_vel = velocity _caller;
-	_caller moveindriver _para;
-	_para lock false;
+			};
+		
+			//sleep 0.5;
+			
+		} foreach units _grp1;	
+	};
+	
+} else {
 
+	if (getpos _caller select 2 > (_altchute + 100)) then {
+
+		openMap false;
+
+		sleep 5;
+
+		_caller groupchat "Have a nice trip";// and dont forget to open your chute!";
+
+		//auto open before impact
+		waituntil {(position _caller select 2) <= _altchute};
+
+		if !((vehicle _caller) iskindof "ParachuteBase") then {
+
+			_caller groupchat "Deploying Chute";
+
+			titleCut ["", "BLACK IN", 2];
+
+			_para = "Steerable_Parachute_F" createVehicle position _caller;
+			_para setpos position _caller;
+			_para setdir direction _caller;
+			_vel = velocity _caller;
+			_caller assignAsDriver _para;
+			_caller moveindriver _para;
+			_para lock false;
+
+		};
+	};
+	
 };
+
 waituntil {(position _caller select 2) < 1.5};
 deletevehicle (vehicle _caller);
 _caller switchmove "AmovPercMstpSrasWrflDnon";
 _caller setvelocity [0,0,0];
-};

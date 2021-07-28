@@ -51,7 +51,6 @@ for "_x" from 0 to (_grpnum)-1 do {
 	
 	_veh = selectRandom _vehlist;
 	_armor1 = createVehicle [_veh,_pos, [], 0, "NONE"];
-	EA_spawned_things pushBack _armor1;
 	_armor1 setdir _dir;
 	_armor1 setposatl (getposatl _armor1);
 

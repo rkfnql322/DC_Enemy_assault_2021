@@ -15,7 +15,6 @@ for "_x" from 0 to (_maxnum) do {
 	_pos = [((_sitePos select 0) - _rad + random (_rad * 2)), ((_sitePos select 1) - _rad + random (_rad * 2)), 0];
 	_animalsel = selectRandom _animalarray;
 	_unit = createAgent [_animalsel,_pos,[],0,"NONE"];
-	EA_spawned_things pushBack _unit;
 	_unit setDir (random 360);
 	
 	ghst_animal_array pushBack _unit;

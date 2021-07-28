@@ -5,6 +5,7 @@ Creates markers that stay with the players until nil.
 //if (!isserver) exitwith {};
 //private ["_color","_marker"];
 ghst_player_markers = [];
+ghst_vehicle_markers = [];
 _PARAM_PMARKERS = "PARAM_PMARKERS" call BIS_fnc_getParamValue;
 /*\
 if (_PARAM_PMARKERS == 1) then {

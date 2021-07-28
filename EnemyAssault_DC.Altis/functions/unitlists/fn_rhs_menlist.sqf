@@ -31,7 +31,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 
 		if ((_wCName iskindof "Man") && (_wvehclass == "rhs_vehclass_infantry_emr") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
-			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_officer") && !(_wCName iskindof "rhs_vdv_officer_armored") && !(_wCName iskindof "rhs_vdv_driver") && !(_wCName iskindof "rhs_vdv_crew") && !(_wCName iskindof "rhs_vdv_armoredcrew") && !(_wCName iskindof "rhs_vdv_combatcrew") && !(_wCName iskindof "rhs_vdv_crew_commander")) then {
+			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_officer") && !(_wCName iskindof "rhs_vdv_officer_armored") && !(_wCName iskindof "rhs_vdv_driver") && !(_wCName iskindof "rhs_vdv_crew") && !(_wCName iskindof "rhs_vdv_armoredcrew") && !(_wCName iskindof "rhs_vdv_combatcrew") && !(_wCName iskindof "rhs_vdv_crew_commander") && !(_wCName iskindof "rhs_vdv_driver_armored")) then {
 				_emrList pushback _wCName;
 				_namelist pushback _wCName;
 			};
@@ -45,7 +45,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 		};
 		if ((_wCName iskindof "Man") && (_wvehclass == "rhs_vehclass_infantry_emr_des") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
-			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_des_officer") && !(_wCName iskindof "rhs_vdv_des_officer_armored") && !(_wCName iskindof "rhs_vdv_des_driver") && !(_wCName iskindof "rhs_vdv_des_crew") && !(_wCName iskindof "rhs_vdv_des_armoredcrew") && !(_wCName iskindof "rhs_vdv_des_combatcrew") && !(_wCName iskindof "rhs_vdv_des_crew_commander")) then {
+			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_des_officer") && !(_wCName iskindof "rhs_vdv_des_officer_armored") && !(_wCName iskindof "rhs_vdv_des_driver") && !(_wCName iskindof "rhs_vdv_des_crew") && !(_wCName iskindof "rhs_vdv_des_armoredcrew") && !(_wCName iskindof "rhs_vdv_des_combatcrew") && !(_wCName iskindof "rhs_vdv_des_crew_commander") && !(_wCName iskindof "rhs_vdv_des_driver_armored")) then {
 				_emrdesList pushback _wCName;
 				_namelist pushback _wCName;
 			};
@@ -59,7 +59,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 		};
 		if ((_wCName iskindof "Man") && (_wvehclass == "rhs_vehclass_infantry_flora") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
-			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_flora_officer") && !(_wCName iskindof "rhs_vdv_flora_officer_armored") && !(_wCName iskindof "rhs_vdv_flora_driver") && !(_wCName iskindof "rhs_vdv_flora_crew") && !(_wCName iskindof "rhs_vdv_flora_armoredcrew") && !(_wCName iskindof "rhs_vdv_flora_combatcrew") && !(_wCName iskindof "rhs_vdv_flora_crew_commander")) then {
+			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_flora_officer") && !(_wCName iskindof "rhs_vdv_flora_officer_armored") && !(_wCName iskindof "rhs_vdv_flora_driver") && !(_wCName iskindof "rhs_vdv_flora_crew") && !(_wCName iskindof "rhs_vdv_flora_armoredcrew") && !(_wCName iskindof "rhs_vdv_flora_combatcrew") && !(_wCName iskindof "rhs_vdv_flora_crew_commander") && !(_wCName iskindof "rhs_vdv_flora_driver_armored")) then {
 				_floraList pushback _wCName;
 				_namelist pushback _wCName;
 			};
@@ -73,7 +73,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 		};
 		if ((_wCName iskindof "Man") && (_wvehclass == "rhs_vehclass_infantry_mflora") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
-			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_mflora_officer") && !(_wCName iskindof "rhs_vdv_mflora_officer_armored") && !(_wCName iskindof "rhs_vdv_mflora_driver") && !(_wCName iskindof "rhs_vdv_mflora_crew") && !(_wCName iskindof "rhs_vdv_mflora_armoredcrew") && !(_wCName iskindof "rhs_vdv_mflora_combatcrew") && !(_wCName iskindof "rhs_vdv_mflora_crew_commander")) then {
+			if (!(_wCName in _namelist) && !(_wCName iskindof "rhs_vdv_mflora_officer") && !(_wCName iskindof "rhs_vdv_mflora_officer_armored") && !(_wCName iskindof "rhs_vdv_mflora_driver") && !(_wCName iskindof "rhs_vdv_mflora_crew") && !(_wCName iskindof "rhs_vdv_mflora_armoredcrew") && !(_wCName iskindof "rhs_vdv_mflora_combatcrew") && !(_wCName iskindof "rhs_vdv_mflora_crew_commander") && !(_wCName iskindof "rhs_vdv_mflora_driver_armored")) then {
 				_mfloralist pushback _wCName;
 				_namelist pushback _wCName;
 			};

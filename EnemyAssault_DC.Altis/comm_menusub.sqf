@@ -20,7 +20,9 @@ UavsubMenu =
 
 ["UAV List", [2], "", -5, [["expression", "ghst_uavsupport = [(getmarkerpos ""ghst_player_support""),ghst_uavList,100,PARAM_Cooldowns] spawn ghst_fnc_uavsupport;"]], "1", "1"],
 
-["UGV List", [3], "", -5, [["expression", "ghst_ugvsupport = [(getmarkerpos ""ghst_player_support""),ghst_ugvList,2,PARAM_Cooldowns] spawn ghst_fnc_ugvsupport;"]], "1", "1"]
+["AR-2 Darter", [3], "", -5, [["expression", "ghst_puavsupport = [""B_UAV_01_F"",5] spawn ghst_fnc_puavsupport;"]], "1", "1"],
+
+["UGV List", [4], "", -5, [["expression", "ghst_ugvsupport = [(getmarkerpos ""ghst_player_support""),ghst_ugvList,2,PARAM_Cooldowns] spawn ghst_fnc_ugvsupport;"]], "1", "1"]
 
 ];
 
@@ -37,7 +39,7 @@ CargodropsubMenu =
 
 ["Static", [4], "", -5, [["expression", "ghst_drop = [player,(getmarkerpos ""ghst_player_support""),ghst_air_cargo,ghst_staticvehlist,200,PARAM_Cooldowns] spawn ghst_fnc_cargodrop;"]], "1", "1"],
 
-["Etc", [5], "", -5, [["expression", "ghst_drop = [player,(getmarkerpos ""ghst_player_support""),ghst_air_cargo,ghst_boatlist,200,PARAM_Cooldowns] spawn ghst_fnc_cargodrop;"]], "1", "1"]
+["Boats", [5], "", -5, [["expression", "ghst_drop = [player,(getmarkerpos ""ghst_player_support""),ghst_air_cargo,ghst_boatlist,200,PARAM_Cooldowns] spawn ghst_fnc_cargodrop;"]], "1", "1"]
 
 ];
 
@@ -61,11 +63,11 @@ TransportsubMenu =
 
 ["Helicopter Airlift", [0],"",-2,[["expression", ""]], "1", "0"], // header text 
 
-[format ["%1 Transport", (configFile >> "cfgVehicles" >> ghst_transportheli >> "displayName") call bis_fnc_getcfgdata], [2], "", -5, [["expression", "ghst_transport = [ghst_transportheli,ghst_escortheli,(getposasl helortb),50,PARAM_Cooldowns] spawn ghst_fnc_init_transport;"]], "1", "1"],
+["Infantry Transport", [2], "", -5, [["expression", "ghst_transport = [ghst_helotranslist,ghst_heloattacklist,(getposasl helortb),50,PARAM_Cooldowns] spawn ghst_fnc_init_transport;"]], "1", "1"],
 
-[format ["%1 Transport", (configFile >> "cfgVehicles" >> ghst_transportheli2 >> "displayName") call bis_fnc_getcfgdata], [3], "", -5, [["expression", "ghst_transport = [ghst_transportheli2,ghst_escortheli2,(getposasl helortb),50,PARAM_Cooldowns] spawn ghst_fnc_init_transport;"]], "1", "1"],
+["Cargo Lift RTB", [4], "", -5, [["expression", "ghst_airlift = [ghst_helotranslist,(getmarkerpos ""ghst_player_support""),(getposasl obj_drop),50,PARAM_Cooldowns,false] spawn ghst_fnc_init_airlift;"]], "1", "1"],
 
-[format ["%1 Cargo Lift", (configFile >> "cfgVehicles" >> ghst_airliftheli >> "displayName") call bis_fnc_getcfgdata], [4], "", -5, [["expression", "ghst_airlift = [ghst_airliftheli,(getposasl obj_drop),50,PARAM_Cooldowns] spawn ghst_fnc_init_airlift;"]], "1", "1"]
+["Cargo Lift Destination", [5], "", -5, [["expression", "ghst_airlift = [ghst_helotranslist,(getmarkerpos ""ghst_player_support""),(getposasl obj_drop),50,PARAM_Cooldowns,true] spawn ghst_fnc_init_airlift;"]], "1", "1"]
 
 ];
 
@@ -93,6 +95,10 @@ SettingsubMenu =
 
 ["Add Designator Battery", [3], "", -5, [["expression", "player addmagazine 'laserbatteries';"]], "1", "1"],
 
-["Set All Tasks Complete Debug", [4], "", -5, [["expression", "[player] remoteExec ['ghst_fnc_debugtasks',2];"]], "1", "1"]
+["Show Chat", [4], "", -5, [["expression", "showchat true;"]], "1", "1"],
+
+["Count Unit Numbers", [5], "", -5, [["expression", "call ghst_fnc_countai"]], "1", "1"],
+
+["Set All Tasks Complete Debug", [6], "", -5, [["expression", "[player] remoteExec ['ghst_fnc_debugtasks',2];"]], "1", "1"]
 
 ];

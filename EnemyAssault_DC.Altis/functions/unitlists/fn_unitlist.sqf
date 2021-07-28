@@ -22,7 +22,7 @@ if ((isClass(configFile >> "CfgPatches" >> "rhs_main")) and (_PARAM_RHS == 1)) t
 	ghst_helicivlist = ghst_rhsaircivList;
 	
 	ghst_friendlybase_def = ["B_AAA_System_01_F"];//"B_SAM_System_02_F","B_SAM_System_01_F",
-	ghst_friendlybase_arty = "rhsusf_m109d_usarmy";//"rhsusf_M142_usarmy_D";//"RHS_M119_WD";//"rhsusf_m109d_usarmy";
+	ghst_friendlybase_arty = "rhsusf_m109_usarmy";//"rhsusf_M142_usarmy_D";//"RHS_M119_WD";//"rhsusf_m109d_usarmy";
 	
 	ghst_civlist = ghst_rhsmencivList;
 	
@@ -191,7 +191,7 @@ if ((isClass(configFile >> "CfgPatches" >> "rhs_main")) and (_PARAM_RHS == 1)) t
 	ghst_helicivlist = ghst_aircivList;
 	
 	ghst_friendlybase_def = ["B_AAA_System_01_F"];//"B_SAM_System_02_F","B_SAM_System_01_F",
-	ghst_friendlybase_arty = "B_MBT_01_arty_F";//"B_MBT_01_mlrs_F";//"B_MBT_01_arty_F";
+	ghst_friendlybase_arty = "B_T_MBT_01_arty_F";//"B_MBT_01_mlrs_F";//"B_MBT_01_arty_F";
 	
 	ghst_civlist = ghst_mencivList;	
 
@@ -347,4 +347,30 @@ if ((isClass(configFile >> "CfgPatches" >> "rhs_main")) and (_PARAM_RHS == 1)) t
 		};
 		
 	};
+	
 };
+
+/*
+defaults
+O_MBT_02_arty_F
+
+O_APC_Tracked_02_AA_F
+
+O_Heli_Transport_04_covered_F
+
+O_Plane_CAS_02_dynamicLoadout_F
+O_Plane_Fighter_02_F
+
+O_Boat_Armed_01_hmg_F
+
+O_SAM_System_04_F
+O_Radar_System_02_F
+
+O_T_APC_Tracked_02_AA_ghex_F
+
+O_T_MBT_02_arty_ghex_F
+
+O_T_VTOL_02_infantry_dynamicLoadout_F
+
+O_T_Boat_Armed_01_hmg_F
+*/

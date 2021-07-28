@@ -7,7 +7,7 @@ _rad = _this select 1;//radius around position to search for buildings
 _locselname = _this select 2;//name of location
 
 //array of available intel objects
-_intelarray = ["Land_Suitcase_F","Land_PlasticCase_01_large_F","Land_PlasticCase_01_medium_F","Land_PlasticCase_01_small_F","Land_MetalCase_01_large_F","Land_MetalCase_01_medium_F","Land_MetalCase_01_small_F","Land_PCSet_01_case_F"];//,"Land_Laptop_unfolded_F","Land_Laptop_F","Land_FilePhotos_F","Land_File1_F","Land_File2_F"
+_intelarray = ["Land_Suitcase_F","Land_PlasticCase_01_large_F","Land_PlasticCase_01_medium_F","Land_PlasticCase_01_small_F","Land_MetalCase_01_large_F","Land_MetalCase_01_medium_F","Land_MetalCase_01_small_F","Land_PCSet_01_case_F","CBRNContainer_01_closed_yellow_F","CBRNContainer_01_closed_olive_F","Land_PlasticCase_01_large_black_F","Land_PlasticCase_01_large_black_CBRN_F","Land_PlasticCase_01_large_CBRN_F","Land_PlasticCase_01_large_olive_F","Land_PlasticCase_01_large_olive_CBRN_F","Land_PlasticCase_01_medium_black_F","Land_PlasticCase_01_medium_black_CBRN_F","Land_PlasticCase_01_medium_CBRN_F","Land_PlasticCase_01_medium_olive_F","Land_PlasticCase_01_medium_olive_CBRN_F","Land_PlasticCase_01_small_black_F","Land_PlasticCase_01_small_black_CBRN_F","Land_PlasticCase_01_small_CBRN_F","Land_PlasticCase_01_small_olive_F","Land_PlasticCase_01_small_olive_CBRN_F"];//,"Land_Laptop_unfolded_F","Land_Laptop_F","Land_FilePhotos_F","Land_File1_F","Land_File2_F"
 
 //create random number
 _rnum = str(round (random 999));

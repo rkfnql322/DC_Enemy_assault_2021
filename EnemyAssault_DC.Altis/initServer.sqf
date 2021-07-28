@@ -1,11 +1,9 @@
 _paramDaytimeHour = "paramDaytimeHour" call BIS_fnc_getParamValue;
 if (_paramDaytimeHour == 0) then {
-setDate [2040, 5, 5, (round(random 24)), (round(random 55))];//(round(random 1440))
+setDate [2024, 3, 1, (round(random 24)), (round(random 55))];//(round(random 1440))
 } else {
-setDate [2040, 5, 5, _paramDaytimeHour, 0];
+setDate [2024, 3, 1, _paramDaytimeHour, 0];
 };
-
-EA_spawned_things = [];
 
 //"respawn_west" setMarkerPos (getposasl base);
 //set respawntent
@@ -74,17 +72,27 @@ waituntil { !(isnil "ghst_aircivList") or !(isnil "ghst_rhsaircivList") };
 
 //Enemy Unit list
 call ghst_fnc_unitlist;
-
-[[],ghst_friendlybase_def,[aa1,art1,art2],false,WEST] spawn ghst_fnc_basedef;
-
-//[getposatl ghst_artillery,ghst_friendlybase_arty,180,[0,-15,+15],false,WEST] spawn ghst_fnc_basearty;
+//What type of enemy camo tent
+if ((worldName == "Enoch") or (worldName == "Tanoa")) then {
+	ghst_opfortent = "CamoNet_wdl_big_F";
+} else {
+	ghst_opfortent = "CamoNet_OPFOR_big_F";
+};
+if (worldName == "Enoch") then {
+	[[],[],[aa1,aa2],false,WEST] spawn ghst_fnc_basedef;
+	[getposatl ghst_artillery,ghst_friendlybase_arty,55,[0,-15,+15],false,WEST] spawn ghst_fnc_basearty;
+} else {
+	[[],ghst_friendlybase_def,[art1,art2,aa1,aa2,aa3,aa4,aa5,aa6,aa7,aa8,aa9,aa10],false,WEST] spawn ghst_fnc_basedef;
+};
 ghst_mapsize = getNumber (configfile >> "CfgWorlds" >> worldName >> "mapSize") / 2;
 [(getmarkerpos "eairspawn"),(getmarkerpos "center"),[ghst_mapsize,ghst_mapsize],600,3,[true,30],[false,"ColorRed"]] spawn ghst_fnc_eair;
 [(getmarkerpos "bairspawn"),(getmarkerpos "center"),[ghst_mapsize,ghst_mapsize],600,2,[true,30],[false,"ColorBlue"]] spawn ghst_fnc_bair;
-
+[] execVM "ast\fn_spawnlist.sqf";
+[] execVM "ast\fn_killevent.sqf";
+[] execVM "ast\fn_dbcheck.sqf";
 _PARAM_AISkill = "PARAM_AISkill" call BIS_fnc_getParamValue;
 [[(getmarkerpos "Respawn_West"),1000],[600,600],(4 + round(random 2)),[false,"ColorRed"],(_PARAM_AISkill/10)] spawn ghst_fnc_randespawn;
-
+/*
 //Spawn Base helicopters
 if (true) then {
 private ["_helolist","_markarray","_namearray","_air","_marksel","_VarName"];
@@ -104,8 +112,8 @@ _namearray = ["heli_1","heli_2"];
 	_data = [missionNamespace,_air] call BIS_fnc_addRespawnPosition;
 	nul = [_air,5,false] execfsm "scripts\ghst_vehrespawn.fsm";
 	} foreach _helolist;
-};*/
-/*
+};
+
 //Spawn F16C ReArm
 _mrkr = getMarkerPos "fir_bp1";
 "fir_bp1" setMarkerPos [_mrkr select 0, _mrkr select 1, 57.2];
@@ -124,7 +132,7 @@ _namearray = ["f16rearm_1"];
     _baseplate setdir (markerdir _marksel) -180;
    _baseplate allowdamage false
     } foreach ["FIR_Baseplate"];
-};*/
+};
 //#include "servermodules.sqf"
 
 //addrespawn point on USS Freedom
@@ -132,6 +140,4 @@ _namearray = ["f16rearm_1"];
 //[missionNamespace,spawn_liberty,"USS Liberty"] call BIS_fnc_addRespawnPosition;
 
 //call ghst_fnc_randomobj;
-
-// uav intel
-nul = [] execVM "MIL_EnhancedUAVIntel\init.sqf";
+*/

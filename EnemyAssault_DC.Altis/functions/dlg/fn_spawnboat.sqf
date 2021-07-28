@@ -104,8 +104,6 @@ DLG_VEH_SELECTED = false;
 	if (isnil "ghst_vehsel") exitwith {_caller groupchat "Nothing Spawned";};
 	if (ghst_vehsel != "none" && DLG_VEH_SELECTED) then {
 	_veh_name = getText (configFile >> "cfgVehicles" >> (_vehsel) >> "displayName");
-	//_spawnpos = _spawn findEmptyPosition[ 2 , 10 , _vehsel ];
-	//if (isnil "_spawnpos" or count _spawnpos < 2) exitwith {_caller groupchat "Spawn Pad not clear";};
 	_padempty = nearestObjects [_spawn, ["LandVehicle","Air"], _check_radius];
 	if (count _padempty > 0) exitwith {titleText "Spawn Pad not clear";};
 	_veh1 = createVehicle [_vehsel,_spawn, [], 0, "NONE"];
@@ -114,8 +112,10 @@ DLG_VEH_SELECTED = false;
 	ghst_local_vehicles pushback _veh1;
 	
 	_veh1 setdir _dir;
-	//_veh1 addEventHandler ["killed", {_this execvm "scripts\ghst_vehdelete.sqf"}];
-	[_veh1, "ColorGrey", "mil_DOT", _veh_name] spawn ghst_fnc_tracker;
+	//[_veh1, "ColorGrey", "mil_DOT", _veh_name] spawn ghst_fnc_tracker;
+	_VarName = "ghst_boat" + str((count ghst_vehicles) + 1);
+	missionNamespace setVariable [_VarName,_veh1];
+	ghst_vehicles pushBack _VarName;
 	//cutText [Format ["%1 Spawned", _veh_name],"PLAIN",2];
 	//hint format ["%1 Spawned", _veh_name];
 	titleText [format ["%1 Spawned", _veh_name], "PLAIN DOWN"]; titleFadeOut 5;

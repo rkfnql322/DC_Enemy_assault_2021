@@ -27,7 +27,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 		_wfaction = getText(configFile >> "cfgvehicles" >> _wCName >> "faction");
 		_wcrew = getnumber(configFile >> "cfgvehicles" >> _wCName >> "transportSoldier");
 
-		if ((_wvehclass == "rhs_vehclass_tank") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
+		if ((_wvehclass == "rhs_vehclass_tank") && (_wfaction == "rhs_faction_vdv") && (_wCName != "rhs_t14_tv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
 			if !(_wCName in _namelist) then {
 				_rhstankList pushback _wCName;
@@ -48,7 +48,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 				_namelist pushback _wCName;
 			};		
 		};
-		if ((_wvehclass == "Armored") && (_wfaction == "rhs_faction_vdv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
+		if ((_wvehclass == "Armored") && (_wfaction == "rhs_faction_vdv") && (_wCName != "rhs_t14_tv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
 			if !(_wCName in _namelist) then {
 				_rhstankList pushback _wCName;
@@ -104,7 +104,7 @@ for "_i" from 0 to (count _cfgvehicles)-1 do {
 				_namelist pushback _wCName;
 			};		
 		};
-		if ((_wvehclass == "rhs_vehclass_tank") && (_wfaction == "rhs_faction_tv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
+		if ((_wvehclass == "rhs_vehclass_tank") && (_wfaction == "rhs_faction_tv") && (_wCName != "rhs_t14_tv") && (_wDName!="") && (_wModel!="") && (_wscope==2)) then {
 
 			if !(_wCName in _namelist) then {
 				_rhstankList pushback _wCName;

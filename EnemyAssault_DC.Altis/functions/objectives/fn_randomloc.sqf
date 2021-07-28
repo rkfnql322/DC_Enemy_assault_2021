@@ -52,13 +52,16 @@ _veh setposatl _vehpos;
 
 //spawn camo net over cache
 	if (_usenet and !(_veh iskindof "House_F") and !(_veh iskindof "rhs_9k79_B")) then {
-		_vehnet = createVehicle ["CamoNet_OPFOR_big_F",_vehpos, [], 0, "CAN_COLLIDE"];
+		_vehnet = createVehicle [ghst_opfortent,_vehpos, [], 0, "CAN_COLLIDE"];
 		_vehnet allowdamage false;
 		_vehnet setdir (getdir _veh) - 180;
 		_vehnet setposatl _vehpos;
 		_vehnet setVectorUP (surfaceNormal [_vehpos select 0,_vehpos select 1]);
 		_vehnet allowdamage true;
 	};
+	
+	//put camo on vehicles if they have it and random slat armor
+	[_veh, FALSE, ["showcamonethull", 1, "showcamonetturret", 1, "showcamonetcannon", 1, "showslathull", 0.3]] call BIS_fnc_initVehicle;
 	
 	if (_veh iskindof "rhs_9k79_B") then {
 		[_veh,nil,["RHS_Rocket_Handler", 1]] call BIS_fnc_initVehicle;

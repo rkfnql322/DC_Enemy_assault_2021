@@ -12,10 +12,10 @@ _cn = count ghst_demo_array;
 _cvar = "ghst_demo" + str _cn;
 ghst_demo_array pushback _explosive;
 
-//_detaction = player addAction [format ["<t size='1.2' shadow='2' color='#B22222'>Detonate %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_detdemo}, [_explosive,_cn,_cvar], 5, false, true, "","vehicle _this == _target"];
+_detaction = player addAction [format ["<t size='1.2' shadow='2' color='#B22222'>Detonate %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_detdemo}, [_explosive,_cn,_cvar], 5, false, true, "","vehicle _this == _target"];
 
-//_pickupaction = player addAction [format ["<t size='1.2' shadow='2' color='#22b2b2'>Pickup %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_pickupdemo}, [_explosive,_cn,_cvar,_expmag,_expname], 4.9, false, true, "","vehicle _this == _target"];
+_pickupaction = player addAction [format ["<t size='1.2' shadow='2' color='#22b2b2'>Pickup %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_pickupdemo}, [_explosive,_cn,_cvar,_expmag,_expname], 4.9, false, true, "","vehicle _this == _target"];
 
-//_timeraction = player addAction [format ["<t size='1.2' shadow='2' color='#00cc66'>Set Timer %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_timerdemo}, [_explosive,_cn,_cvar,_expmag,_expname], 4.8, false, true, "","vehicle _this == _target"];
+_timeraction = player addAction [format ["<t size='1.2' shadow='2' color='#00cc66'>Set Timer %2 #%1</t> <img size='3' shadow='2'/>", _cn + 1,_expname], {call ghst_fnc_timerdemo}, [_explosive,_cn,_cvar,_expmag,_expname], 4.8, false, true, "","vehicle _this == _target"];
 
  player setVariable [_cvar, [_detAction, _pickupAction,_timeraction]];

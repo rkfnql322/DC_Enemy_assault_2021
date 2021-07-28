@@ -1,4 +1,4 @@
-//V1.5.8 spawns a unit to be rescued
+//V1.5.9 spawns a unit to be rescued
 //if (!isserver) exitwith {};
 private ["_position_mark","_radarray","_campmark","_unit_type","_locselname","_wside","_rnum","_wGrp","_pow","_VarName","_veh_name","_tsk","_taskdesc","_trig2cond","_trig2act","_trg1","_trig1cond"];
 
@@ -34,8 +34,11 @@ if (isnil "_veh_name") then {_veh_name = "John Doe";};
 
 removeAllAssignedItems _pow;
 removeallweapons _pow;
+removeVest _pow;
 removeHeadgear _pow;
 removeBackpack _pow;
+_pow addItem "G_Blindfold_01_white_F";
+_pow assignItem "G_Blindfold_01_white_F";
 _pow setunitpos "UP";
 _pow setBehaviour "Careless";
 dostop _pow;

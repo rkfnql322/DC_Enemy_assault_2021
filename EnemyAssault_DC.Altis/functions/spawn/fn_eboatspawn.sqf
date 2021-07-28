@@ -17,6 +17,7 @@ _markunitsarray = _this select 4;
 //#include "unit_list.sqf"
 _menlist = ghst_crewmenlist;
 _boatlist = ghst_patrolboatlist;
+_crewlist = ghst_crewmenlist;
 
 for "_x" from 0 to (_grpnum)-1 do {
 
@@ -26,12 +27,12 @@ for "_x" from 0 to (_grpnum)-1 do {
 	
 	_veh = selectRandom _boatlist;
 	_boat1 = createVehicle [_veh,_pos, [], 0, "NONE"];
-	EA_spawned_things pushBack _boat;
 	_eGrp = createGroup _sideguards;
 	_boat1 setdir (random 360);
 	_boat1 setposasl (getposasl _boat1);
 
-	_crew = [_boat1, _eGrp] call BIS_fnc_SpawnCrew;
+	_crewsel = selectRandom _crewlist;
+	_crew = [_boat1, _eGrp,false,"",_crewsel] call BIS_fnc_SpawnCrew;
 	
 	//set combat mode
 	_eGrp setCombatMode "RED";

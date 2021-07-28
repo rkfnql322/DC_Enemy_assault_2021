@@ -39,13 +39,13 @@ While {_loop} do {
 
 if (isnil "_locselpos") exitwith {finish = true; publicvariable "finish"; diag_log format ["TASK LOCATIONS END PAST LOOP %1", ghst_objarray];};
 
-	#define _area_size 1200
+	#define _area_size 800
 	#define _helo_area_size [1000,1000]
 	#define _boat_area_size [600,600]
-	#define _enemy_house [45,35]
-	#define _enemy_patrols (4 + round(random 3))
+	#define _enemy_house [50,40]
+	#define _enemy_patrols (3 + round(random 2))
 	#define _enemy_squadsize (3 + round(random 4))
-	#define _enemy_vehicles (3 + round(random 4))
+	#define _enemy_vehicles (3 + round(random 3))
 	#define _enemy_boats (round(random 2))
 
 //random boat patrol

@@ -23,6 +23,7 @@ _objselectlist = ghst_inflist;
 // fill dialog with vehicle names
 createDialog "UseSelectedVehicle";
 sleep 0.1;
+ctrlSetText [DLG_USE_BTN, "Spawn Infantry"];
 _ctrlList = findDisplay DLG_USE_IDD displayCtrl DLG_USE_LIST;
 
 private ["_index","_lstidx","_lstpos""_i"];

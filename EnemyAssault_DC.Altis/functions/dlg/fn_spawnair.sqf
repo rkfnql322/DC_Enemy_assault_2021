@@ -23,7 +23,7 @@ if (isnil "ghst_aircraftlist") exitwith {hint "Spawn list not ready yet";};
 //_vehiclelist = ghst_aircraftlist;
 _PARAM_PlayerVehicles = "PARAM_PlayerVehicles" call BIS_fnc_getParamValue;
 
-{if (count crew _x == 0 || unitIsUAV _x) then {deletevehicle _x};} foreach (nearestObjects [_spawn, ["AllVehicles"], _check_radius, true]);
+{if (count crew _x == 0) then {deletevehicle _x};} foreach (nearestObjects [_spawn, ["AllVehicles"], _check_radius, true]);
 {deletevehicle _x;} foreach (nearestObjects [_spawn, ["Slingload_01_Base_F","USAF_MOABdisplay"], _check_radius, true]);
 {deletevehicle _x;} foreach nearestObjects [_spawn,["CraterLong_small","CraterLong","WeaponHolder","GroundWeaponHolder"], _check_radius, true];
 
@@ -104,21 +104,27 @@ DLG_VEH_SELECTED = false;
 	if (isnil "ghst_vehsel") exitwith {_caller groupchat "Nothing Spawned";};
 	if (ghst_vehsel != "none" && DLG_VEH_SELECTED) then {
 	_veh_name = getText (configFile >> "cfgVehicles" >> (_vehsel) >> "displayName");
-	//_spawnpos = _spawn findEmptyPosition[ 2 , 10 , _vehsel ];
-	//if (isnil "_spawnpos" or count _spawnpos < 2) exitwith {_caller groupchat "Spawn Pad not clear";};
 	_padempty = nearestObjects [_spawn, ["LandVehicle","Air"], _check_radius];
 	if (count _padempty > 0) exitwith {titleText "Spawn Pad not clear";};
 	_veh1 = createVehicle [_vehsel,_spawn, [], 0, "NONE"];
 	_veh1 setdir _dir;
-	_veh1 setposatl [_spawn select 0, _spawn select 1, _spawn select 2 + 0.1];
+	_veh1 setposatl [_spawn select 0, _spawn select 1, _spawn select 2 + 0.3];
 	_veh1 setvelocity [0,0,0];
 	_veh1 setVectorUP (surfaceNormal [(getPosatl _veh1) select 0,(getPosatl _veh1) select 1]);
 	if !(_vehsel iskindof "Slingload_01_Base_F") then {
 		ghst_local_vehicles pushback _veh1;
 	};
-	
-	//_veh1 addEventHandler ["killed", {_this execvm "scripts\ghst_vehdelete.sqf"}];
-	[_veh1, "ColorGrey", "mil_DOT", _veh_name] spawn ghst_fnc_tracker;
+	if (_veh1 isKindOf "rhs_uh1h_base") then {
+		[
+			_veh1,
+			["us_army",1], 
+			true
+		] call BIS_fnc_initVehicle;
+	};
+	//[_veh1, "ColorGrey", "mil_DOT", _veh_name] spawn ghst_fnc_tracker;
+	_VarName = "ghst_air" + str((count ghst_vehicles) + 1);
+	missionNamespace setVariable [_VarName,_veh1];
+	ghst_vehicles pushBack _VarName;
 	//cutText [Format ["%1 Spawned", _veh_name],"PLAIN",2];
 	//hint format ["%1 Spawned", _veh_name];
 	titleText [format ["%1 Spawned", _veh_name], "PLAIN DOWN"]; titleFadeOut 5;

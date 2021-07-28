@@ -40,6 +40,7 @@ class GHST
 		class waypoints {description = "creates waypoints with cycle";};
 		class waypoints_unload {description = "create a waypoint that unloads then a set of patrol waypoints on cycle";};
 		class tracker {description = "tracking player spawned vehicles locally";};
+		class countai {description = "counts ai numbers";};
 	};
 	class vehlists
 	{
@@ -132,6 +133,7 @@ class GHST
 		class spawninf {description = "creates friendly AI for players group";};
 		class delete_aigroup {description = "deletes AI from players group";};
 		class aceheal {description = "ace full heal";};
+		class clear_ugv {description = "clear pelter ugv";};
 	};
 	class demo
 	{
@@ -180,6 +182,7 @@ class GHST
 		class spawnboat {description = "spawn boat dialog";};
 		class spawnair {description = "spawn aircraft dialog";};
 		class spawnveh {description = "spawn vehicle dialog";};
+		class objlist {description = "dialog for list of vehicles to choose";};
 	};
 	class server
 	{
